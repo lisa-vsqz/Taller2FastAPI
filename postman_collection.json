@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "9f4c885a-5f28-4587-a9a1-9ca84fa12fc8",
+		"name": "Taller openAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33540474"
+	},
+	"item": [
+		{
+			"name": "GET /envios",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/envios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"envios"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/envios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"envios"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "93"
+						},
+						{
+							"key": "Accept",
+							"value": "*/*"
+						},
+						{
+							"key": "Accept-Encoding",
+							"value": "gzip, deflate, br"
+						},
+						{
+							"key": "Postman-Token",
+							"value": "180dabf7-b83a-47cb-b241-11b7955fe290"
+						},
+						{
+							"key": "User-Agent",
+							"value": "PostmanRuntime/7.49.0"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[{\"id\":\"001\",\"destinatario\":\"Juan PÃ©rez\",\"direccion\":\"Calle 1\",\"estado\":\"En trÃ¡nsito\"}]"
+				}
+			]
+		},
+		{
+			"name": "api/health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"health"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "15"
+						},
+						{
+							"key": "Accept",
+							"value": "*/*"
+						},
+						{
+							"key": "Accept-Encoding",
+							"value": "gzip, deflate, br"
+						},
+						{
+							"key": "Postman-Token",
+							"value": "742e8ed6-9726-43eb-bb12-44e8e85702e9"
+						},
+						{
+							"key": "User-Agent",
+							"value": "PostmanRuntime/7.49.0"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\"status\":\"UP\"}"
+				}
+			]
+		},
+		{
+			"name": "GET /envios/{id}",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/envios/001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"envios",
+								"001"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "85"
+						},
+						{
+							"key": "Accept",
+							"value": "*/*"
+						},
+						{
+							"key": "Accept-Encoding",
+							"value": "gzip, deflate, br"
+						},
+						{
+							"key": "id",
+							"value": "001"
+						},
+						{
+							"key": "Postman-Token",
+							"value": "57d7caa2-a048-46c1-8b7e-a18e43d14a10"
+						},
+						{
+							"key": "User-Agent",
+							"value": "PostmanRuntime/7.49.0"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\"id\":\"001\",\"destinatario\":\"Cliente X\",\"direccion\":\"C/ Ejemplo\",\"estado\":\"Entregado\"}"
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": \"002\",\r\n  \"destinatario\": \"María López\",\r\n  \"direccion\": \"Av. Central 123\",\r\n  \"estado\": \"Registrado\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/envios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"envios"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "content-length",
+							"value": "47"
+						},
+						{
+							"key": "Accept",
+							"value": "*/*"
+						},
+						{
+							"key": "Accept-Encoding",
+							"value": "gzip, deflate, br"
+						},
+						{
+							"key": "Postman-Token",
+							"value": "b8b7bdc5-736a-42a4-bfb7-dfba93238e3d"
+						},
+						{
+							"key": "User-Agent",
+							"value": "PostmanRuntime/7.49.0"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						},
+						{
+							"key": "connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"mensaje\": \"EnvÃ\\u00ado registrado correctamente\"\n}"
+				}
+			]
+		}
+	]
+}

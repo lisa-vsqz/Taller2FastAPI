@@ -1,0 +1,83 @@
+openapi: 3.0.1
+info:
+  title: API de Envios
+  version: 1.0.0
+  description: API REST para registrar y consultar envíos.
+servers:
+  - url: http://localhost:8080/api
+paths:
+  /envios:
+    get:
+      summary: Listar todos los envíos
+      responses:
+        "200":
+          description: Lista de envíos
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Envio"
+    post:
+      summary: Crear un nuevo envío
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Envio"
+      responses:
+        "201":
+          description: Envío creado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mensaje:
+                    type: string
+  /envios/{id}:
+    get:
+      summary: Obtener un envío por ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Detalle del envío
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Envio"
+  /health:
+    get:
+      summary: Salud de la API
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+components:
+  schemas:
+    Envio:
+      type: object
+      required:
+        - id
+        - destinatario
+      properties:
+        id:
+          type: string
+        destinatario:
+          type: string
+        direccion:
+          type: string
+        estado:
+          type: string
